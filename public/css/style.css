@@ -1,0 +1,229 @@
+/* .header-logo {
+    height: 100px;
+    width: 300px;
+}
+
+
+header {
+    height: 100px;
+    width: auto;
+    background-color: #FF0066;
+}
+
+#side-bar {
+    width: 200px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: blue;
+  }
+  .right-column {
+    width: 30%;
+  }
+
+  .container {
+    padding: 1%;
+} */
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    color: #333;
+}
+.header-wrapper {
+    width: 100%;
+    justify-content: flex-start;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.header-box-wrapper {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    background: rgba(230, 0, 0, 0.8);
+    margin: 0 auto;
+}
+
+
+.header-content {
+    text-align: center;
+    color: white;
+    margin: 15px;
+}
+
+.content-wrapper {
+    display: flex;
+    padding: 5px 0;
+    margin: 0 10px;
+}
+
+.main-content {
+    width: 100%;
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    height: 1325px;
+    margin-right: 10px;
+    background: #FFFFFF;
+}
+
+.side-bar-content {
+    display: flex;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 125px;
+    width: 185px;
+    height: 500px;
+    border: 1px solid;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    color: white;
+    background: #000000;
+}
+.my-page-top {
+    border: 1px solid black;
+    height: 100px;
+    top: 20px;
+}
+.head-user {
+    height: 700px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.my-page {
+    margin: 10px auto;
+    text-align: left; 
+    height: 600px;
+    border: 1px solid black;
+}
+
+.my-page-bottom {
+    margin: 10px auto;
+    text-align: left; 
+    height: 600px;
+    border: 1px solid black;
+}
+
+.aaa > p {
+    margin: 0;
+}
+
+.my-page > p {
+    margin: 0;
+}
+.lesson-list-container {
+    display: flex;
+    float: left;
+    height: 200px;
+}
+.item {
+    width: 200px;
+    height: 200px;
+    background-color: skyblue;
+    margin: 20px;
+    text-align: center;
+}
+.lesson-list-header {
+    margin: 30px;
+    background-color: bisque;
+    width: 2000px;
+    height: 200px;
+    float: left;
+}
+.item > h3 {
+    font-size: 1.25rem;
+    color: #2b546a;
+}
+
+.lesson-list-header > a {
+    margin: 0;
+    padding: 0;
+}
+.header-img {
+    float: left;
+}
+
+.header-nav {
+    float: right;
+}
+
+.header-nav > a {
+    text-decoration: none;
+}
+
+table{
+    width: 100%;
+    border-spacing: 0;
+  }
+  
+  table th{
+    border-bottom: solid 2px #6666ff;
+    padding: 10px 0;
+    width: 100px;
+  }
+  
+  table td{
+    border-bottom: solid 2px #fb5144;
+    text-align: center;
+    padding: 10px 0;
+    width: 200px;
+  }
+
+  .table-posision {
+      margin: 100px auto;
+  }
+
+  .button {
+    display       : inline-block;
+    border-radius : 5%;          /* 角丸       */
+    font-size     : 12pt;        /* 文字サイズ */
+    text-align    : center;      /* 文字位置   */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 12px 12px;   /* 余白       */
+    background    : #fb5144;     /* 背景色     */
+    color         : #ffffff;     /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+    transition    : .3s;         /* なめらか変化 */
+    box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+    border        : 1px solid #000066;    /* 枠の指定 */
+  }
+  .button:hover {
+    box-shadow    : none;        /* カーソル時の影消去 */
+    color         : #fb5144;     /* 背景色     */
+    background    : #ffffff;     /* 文字色     */
+  }
+
+  .header-button {
+    display       : inline-block;
+    border-radius : 5%;          /* 角丸       */
+    font-size     : 16pt;        /* 文字サイズ */
+    text-align    : center;      /* 文字位置   */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 12px 12px;   /* 余白       */
+    background    : #fb5144;     /* 背景色     */
+    color         : #ffffff;     /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+    transition    : .3s;         /* なめらか変化 */
+    box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+    border        : 1px solid #000066;    /* 枠の指定 */
+  }
+  .header-button:hover {
+    box-shadow    : none;        /* カーソル時の影消去 */
+    color         : #fb5144;     /* 背景色     */
+    background    : #ffffff;     /* 文字色     */
+  }
+  .resizeimage img { 
+      width: 100%;
+    }
+  .resizeimage {
+    margin-top: 0;
+  }
