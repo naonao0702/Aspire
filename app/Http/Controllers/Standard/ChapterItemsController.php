@@ -15,6 +15,11 @@ class ChapterItemsController extends Controller
         $datas = ChapterItem::where('language_id', $id)->where('chapter_num', $chapter)
             ->OrderBy('chapter_item_num', 'asc')
             ->get();
-        return view('standard.chapter-item', ['datas' => $datas]);
+        $complete = count(ChapterItem::where('language_id', $id)->where('chapter_num', $chapter)->where('is_complete', 1)->get());
+
+        $all = count(ChapterItem::where('language_id', $id)->where('chapter_num', $chapter)->get());
+
+        $proportion = floor($complete / $all * 100);
+        return view('standard.chapter-item', ['datas' => $datas, 'proportion' => $proportion]);
     }
 }
