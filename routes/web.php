@@ -24,6 +24,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/lesson-most-detail/{language_id?}', 'standard\LessonMostDetailController@index');
     Route::get('/lesson-item/{language_id?}/{chapter_num?}', 'standard\ChapterItemsController@index')->name('lesson-item');
     Route::get('/lesson-item-complete/{item_id?}', 'standard\CompleteController@complete');
+    Route::get('lesson-item-all/{language_id?}/{chapter_num?}', 'standard\CompleteController@all');
+    Route::get('lesson-item-not-all/{language_id?}/{chapter_num?}', 'standard\CompleteController@notall');
 });
 
 

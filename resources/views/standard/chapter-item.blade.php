@@ -6,6 +6,9 @@
 @section('contents')
 <div class="table-posision">
     <h3>進捗 : {{ $proportion }}%</h3>
+    <p><a href="/lesson-item-all/{{ $datas[0]->language_id }}/{{ $datas[0]->chapter_num }}" class="button" style="text-decoration: none;">全て完了にする</a></p>
+    <p><a href="/lesson-item-not-all/{{ $datas[0]->language_id }}/{{ $datas[0]->chapter_num }}" class="button" style="text-decoration: none;">全て未完了にする</a></p>
+
     <table>
         @foreach($datas as $data)
         <tr>
