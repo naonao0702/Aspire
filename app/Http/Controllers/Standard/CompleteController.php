@@ -21,6 +21,7 @@ class CompleteController extends Controller
         $clear_data->chapter_item_num = $data->chapter_item_num;
         $clear_data->user_id = $user_data->id;
         $clear_data->user_name = $user_data->name;
+        $clear_data->item_id = $data->item_id;
 
         $clear_data->save();
 
@@ -34,7 +35,7 @@ class CompleteController extends Controller
 
     public function notcomplete($language_id, $chapter_num, $chapter_item_num)
     {
-        $user_data = \Auth::user();
+        $user_data = Auth::user();
         $clear_data = ClearItem::where('user_id', $user_data->id)
             ->where('language_id', $language_id)
             ->where('chapter_num', $chapter_num)
@@ -55,35 +56,35 @@ class CompleteController extends Controller
         ]));
     }
 
-    public function all($language_id, $chapter_num)
-    {
-        $data = ChapterItem::where('language_id', $language_id)
-            ->where('chapter_num', $chapter_num)
-            ->get();
-        $count = count($data);
-        for ($i = 0; $i < $count; $i++) {
-            $data[$i]->is_complete = 1;
-            $data[$i]->save();
-        }
-        return redirect(route('lesson-item', [
-            'language_id' => $data[0]->language_id,
-            'chapter_num' => $data[0]->chapter_num,
-        ]));
-    }
+    // public function all($language_id, $chapter_num)
+    // {
+    //     $data = ChapterItem::where('language_id', $language_id)
+    //         ->where('chapter_num', $chapter_num)
+    //         ->get();
+    //     $count = count($data);
+    //     for ($i = 0; $i < $count; $i++) {
+    //         $data[$i]->is_complete = 1;
+    //         $data[$i]->save();
+    //     }
+    //     return redirect(route('lesson-item', [
+    //         'language_id' => $data[0]->language_id,
+    //         'chapter_num' => $data[0]->chapter_num,
+    //     ]));
+    // }
 
-    public function notall($language_id, $chapter_num)
-    {
-        $data = ChapterItem::where('language_id', $language_id)
-            ->where('chapter_num', $chapter_num)
-            ->get();
-        $count = count($data);
-        for ($i = 0; $i < $count; $i++) {
-            $data[$i]->is_complete = 0;
-            $data[$i]->save();
-        }
-        return redirect(route('lesson-item', [
-            'language_id' => $data[0]->language_id,
-            'chapter_num' => $data[0]->chapter_num,
-        ]));
-    }
+    // public function notall($language_id, $chapter_num)
+    // {
+    //     $data = ChapterItem::where('language_id', $language_id)
+    //         ->where('chapter_num', $chapter_num)
+    //         ->get();
+    //     $count = count($data);
+    //     for ($i = 0; $i < $count; $i++) {
+    //         $data[$i]->is_complete = 0;
+    //         $data[$i]->save();
+    //     }
+    //     return redirect(route('lesson-item', [
+    //         'language_id' => $data[0]->language_id,
+    //         'chapter_num' => $data[0]->chapter_num,
+    //     ]));
+    // }
 }
