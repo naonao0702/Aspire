@@ -27,6 +27,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/lesson-item-not-complete/{language_id?}/{chapter_num?}/{chapter_item_num?}', 'standard\CompleteController@notcomplete');
     Route::get('lesson-item-all/{language_id?}/{chapter_num?}', 'standard\CompleteController@all');
     Route::get('lesson-item-not-all/{language_id?}/{chapter_num?}', 'standard\CompleteController@notall');
+    Route::get('/reset', function () {
+        return view('auth.passwords.reset');
+    });
 });
 
 
