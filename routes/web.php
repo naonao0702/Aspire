@@ -25,11 +25,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/lesson-item/{language_id?}/{chapter_num?}', 'Standard\ChapterItemsController@index')->name('lesson-item');
     Route::get('/lesson-item-complete/{item_id?}', 'standard\CompleteController@complete');
     Route::get('/lesson-item-not-complete/{language_id?}/{chapter_num?}/{chapter_item_num?}', 'standard\CompleteController@notcomplete');
-    Route::get('lesson-item-all/{language_id?}/{chapter_num?}', 'standard\CompleteController@all');
-    Route::get('lesson-item-not-all/{language_id?}/{chapter_num?}', 'standard\CompleteController@notall');
-    Route::get('/reset', function () {
-        return view('auth.passwords.reset');
-    });
+    Route::get('/lesson-item-all-complete/{language_id?}/{chapter_num?}', 'standard\AllItemController@all_clear');
+    Route::get('//lesson-item-all-not-complete/{language_id?}/{chapter_num?}', 'standard\AllItemController@all_not_clear');
 });
 
 
