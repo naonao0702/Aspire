@@ -4,6 +4,9 @@
 
 
 @section('contents')
+<!--<div id="aspire">-->
+<!--    <example-component></example-component>-->
+<!--</div>-->
 <div class="table-posision">
     <h3>進捗 : {{ $proportion }}%</h3>
     <!-- <p><a href="/lesson-item-all/{{ $datas[0]->language_id }}/{{ $datas[0]->chapter_num }}" class="button" style="text-decoration: none;">全て完了にする</a></p>
