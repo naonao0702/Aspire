@@ -4,10 +4,13 @@
 
 
 @section('contents')
-<!--<div id="aspire">-->
-<!--    <example-component></example-component>-->
-<!--</div>-->
+
 <div class="table-posision">
+    <div id="aspire">
+        <chart-component proportion="{{ $proportion }}"></chart-component>
+        <!--<chart-component></chart-component>-->
+        <!--<example-component test="{{ $proportion }}"></example-component>-->
+    </div>
     <h3>進捗 : {{ $proportion }}%</h3>
     <a href="/lesson-item-all-complete/{{ $datas[0]->language_id }}/{{ $datas[0]->chapter_num }}" class="button" style="text-decoration:none;">全て完了</a>
     <a href="/lesson-item-all-not-complete/{{ $datas[0]->language_id }}/{{ $datas[0]->chapter_num }}" class="button" style="text-decoration:none;">全て未完了</a>
