@@ -251,6 +251,11 @@ table{
     background-color: #fff;
     text-decoration: none;
   }
+  .header-title {
+      text-align: center;
+      padding-top: 15%;
+      color: #ffffff;
+  }
 
 
  

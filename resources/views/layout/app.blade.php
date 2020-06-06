@@ -26,6 +26,7 @@
                     </div>
                     <div class="header-nav">
                         <a href="/lesson-list" class="header-button">レッスン一覧</a>
+                        <a href="/">ホーム</a>
                     </div>
                 </div>
             </div>
@@ -34,7 +35,7 @@
         <div class="content-wrapper">
             <div class="container">
                 <div class="main-content">
-                        @yield('contents')
+                    @yield('contents')
                 </div>
                 <div class="footer">フッターです</div>
             </div>
@@ -43,7 +44,7 @@
         <!--<div class="footer">フッターです</div>-->
     </div>
 
-<script src="{{ mix('js/app.js') }}"></script> 
+    <script src="{{ mix('js/app.js') }}"></script>
 </body>
 
 </html>
