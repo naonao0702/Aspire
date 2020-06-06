@@ -15,6 +15,11 @@
 
     <!--<div class="my-page-bottom"></div>-->
     <div class="header-bgimg">
+        <div class="header-title">
+            <h1>Aspire</h1>
+            <h2>「驚き」を次の「当たり前」に</h2>
+        </div>
+
         <a href="/lesson-list" class="top-button small">レッスン一覧</a>
     </div>
 </div>
