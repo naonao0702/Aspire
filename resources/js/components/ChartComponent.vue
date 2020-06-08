@@ -4,7 +4,6 @@
 // import { Doughnut, mixins } from 'vue-chartjs';
 import { Doughnut } from 'vue-chartjs';
 // const { reactiveProp } = mixins;
-// import { Doughnut } from 'vue-chartjs';
 /**
  * Bar       : 棒グラフ
  * Line      : 折れ線グラフ
@@ -16,22 +15,14 @@ import { Doughnut } from 'vue-chartjs';
  * Scatter   : 散布図（mixinでは未対応とのこと）
  **/
 export default {
+  // mixins: [Doughnut, mixins.reactiveData],
   extends: Doughnut,
-  // data() {
-  //     return {
-  //       progress: [],
-  //       // $v : "kensuke",
-  //     };
-  //   },
-  // mixins: [mixins.reactiveProp],
-  // mixins: [reactiveProp],
-  // props: ['proportion'],
-  // mounted () {
-  //   this.renderChart(this.chartData, this.proportion);
-  // }
-  // mounted () {
-  //     this.renderChart(this.proportion);
-  //   }
+  data() {
+    return {
+      color1: '#ddd',
+      color2: '#ddd'
+    };
+  },
   props: {
       proportion: {
         type: String,
@@ -41,21 +32,22 @@ export default {
         }
       }
   },
-  // watch: {
-  //   proportion() {
-      
-  //     console.log(newHoge);
-  //     // this.progress = value.map(() => false);
-  //     // console.log(this.progress);
-    // },
-  //   proportion: {
-  //       handler: function (val, oldVal) {
-  //         console.log('someObj changed');
-  //       },
-  //       deep: true
-  //   }
-  // },
+  methods: {
+      changeColor: function() {
+        console.log(this.proportion);
+        if(this.proportion == 100 ){
+          this.color1 = '#99CC66';
+        }else if(this.proportion >= 80){
+          this.color1 = '#FFCC33';
+        }else if(this.proportion >= 50){
+          this.color1 = '#CD5C5C';
+        }else{
+          this.color1 = '#6699CC';
+        }
+      }
+  },
   mounted () {
+    this.changeColor();
     var data1 = this.proportion;
     var data2 = 100 - data1;
     // データを流し込むだけ
@@ -63,11 +55,8 @@ export default {
       labels: ['達成済','未達成'],
       datasets: [{
         label: 'sample',
-        backgroundColor: ['#ddd', '#bbb'],
-        borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-            ],
+        backgroundColor: [this.color1, this.color2],
+        borderColor: [this.color1, this.color2],
         data: [data1, data2],
       }]
     })
