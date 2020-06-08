@@ -19,14 +19,14 @@ Route::get('/', function () {
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', 'Standard\MypageController@index');
-    Route::get('/lesson-list', 'standard\LessonListController@index');
-    Route::get('/lesson-detail/{language_data}', 'standard\LessonDetailController@index');
-    Route::get('/lesson-most-detail/{language_id?}', 'standard\LessonMostDetailController@index');
+    Route::get('/lesson-list', 'Standard\LessonListController@index');
+    Route::get('/lesson-detail/{language_data}', 'Standard\LessonDetailController@index');
+    Route::get('/lesson-most-detail/{language_id?}', 'Standard\LessonMostDetailController@index');
     Route::get('/lesson-item/{language_id?}/{chapter_num?}', 'Standard\ChapterItemsController@index')->name('lesson-item');
     Route::get('/lesson-item-complete/{item_id?}', 'standard\CompleteController@complete');
-    Route::get('/lesson-item-not-complete/{language_id?}/{chapter_num?}/{chapter_item_num?}', 'standard\CompleteController@notcomplete');
-    Route::get('/lesson-item-all-complete/{language_id?}/{chapter_num?}', 'standard\AllItemController@all_clear');
-    Route::get('//lesson-item-all-not-complete/{language_id?}/{chapter_num?}', 'standard\AllItemController@all_not_clear');
+    Route::get('/lesson-item-not-complete/{language_id?}/{chapter_num?}/{chapter_item_num?}', 'Standard\CompleteController@notcomplete');
+    Route::get('/lesson-item-all-complete/{language_id?}/{chapter_num?}', 'Standard\AllItemController@all_clear');
+    Route::get('//lesson-item-all-not-complete/{language_id?}/{chapter_num?}', 'Standard\AllItemController@all_not_clear');
 });
 
 

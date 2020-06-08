@@ -1913,7 +1913,6 @@ __webpack_require__.r(__webpack_exports__);
 // ここでチャートの種類を選択して...
 // import { Doughnut, mixins } from 'vue-chartjs';
  // const { reactiveProp } = mixins;
-// import { Doughnut } from 'vue-chartjs';
 
 /**
  * Bar       : 棒グラフ
@@ -1927,22 +1926,14 @@ __webpack_require__.r(__webpack_exports__);
  **/
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  // mixins: [Doughnut, mixins.reactiveData],
   "extends": vue_chartjs__WEBPACK_IMPORTED_MODULE_0__["Doughnut"],
-  // data() {
-  //     return {
-  //       progress: [],
-  //       // $v : "kensuke",
-  //     };
-  //   },
-  // mixins: [mixins.reactiveProp],
-  // mixins: [reactiveProp],
-  // props: ['proportion'],
-  // mounted () {
-  //   this.renderChart(this.chartData, this.proportion);
-  // }
-  // mounted () {
-  //     this.renderChart(this.proportion);
-  //   }
+  data: function data() {
+    return {
+      color1: '#ddd',
+      color2: '#ddd'
+    };
+  },
   props: {
     proportion: {
       type: String,
@@ -1952,20 +1943,23 @@ __webpack_require__.r(__webpack_exports__);
       }
     }
   },
-  // watch: {
-  //   proportion() {
-  //     console.log(newHoge);
-  //     // this.progress = value.map(() => false);
-  //     // console.log(this.progress);
-  // },
-  //   proportion: {
-  //       handler: function (val, oldVal) {
-  //         console.log('someObj changed');
-  //       },
-  //       deep: true
-  //   }
-  // },
+  methods: {
+    changeColor: function changeColor() {
+      console.log(this.proportion);
+
+      if (this.proportion == 100) {
+        this.color1 = '#99CC66';
+      } else if (this.proportion >= 80) {
+        this.color1 = '#FFCC33';
+      } else if (this.proportion >= 50) {
+        this.color1 = '#CD5C5C';
+      } else {
+        this.color1 = '#6699CC';
+      }
+    }
+  },
   mounted: function mounted() {
+    this.changeColor();
     var data1 = this.proportion;
     var data2 = 100 - data1; // データを流し込むだけ
 
@@ -1973,8 +1967,8 @@ __webpack_require__.r(__webpack_exports__);
       labels: ['達成済', '未達成'],
       datasets: [{
         label: 'sample',
-        backgroundColor: ['#ddd', '#bbb'],
-        borderColor: ['rgba(255,99,132,1)', 'rgba(54, 162, 235, 1)'],
+        backgroundColor: [this.color1, this.color2],
+        borderColor: [this.color1, this.color2],
         data: [data1, data2]
       }]
     });
