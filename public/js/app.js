@@ -1909,7 +1909,6 @@ module.exports = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_chartjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-chartjs */ "./node_modules/vue-chartjs/es/index.js");
-//
 // ここでチャートの種類を選択して...
 // import { Doughnut, mixins } from 'vue-chartjs';
  // const { reactiveProp } = mixins;
@@ -1926,7 +1925,7 @@ __webpack_require__.r(__webpack_exports__);
  **/
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  // mixins: [Doughnut, mixins.reactiveData],
+  // mixins: [Doughnut, mixins.reactiveProp],
   "extends": vue_chartjs__WEBPACK_IMPORTED_MODULE_0__["Doughnut"],
   data: function data() {
     return {
@@ -1941,21 +1940,34 @@ __webpack_require__.r(__webpack_exports__);
       "default": function _default() {
         return [];
       }
+    },
+    url: {
+      type: String,
+      require: true,
+      "default": function _default() {
+        return [];
+      }
     }
   },
   methods: {
     changeColor: function changeColor() {
-      console.log(this.proportion);
+      console.log(this.url);
 
-      if (this.proportion == 100) {
-        this.color1 = '#99CC66';
-      } else if (this.proportion >= 80) {
-        this.color1 = '#FFCC33';
-      } else if (this.proportion >= 50) {
-        this.color1 = '#CD5C5C';
-      } else {
+      if (this.url == 1) {
         this.color1 = '#6699CC';
-      }
+      } else {
+        this.color1 = '#99CC66';
+      } // console.log(this.proportion);
+      // if(this.proportion == 100 ){
+      //   this.color1 = '#99CC66';
+      // }else if(this.proportion >= 80){
+      //   this.color1 = '#FFCC33';
+      // }else if(this.proportion >= 50){
+      //   this.color1 = '#CD5C5C';
+      // }else{
+      //   this.color1 = '#6699CC';
+      // }
+
     }
   },
   mounted: function mounted() {
@@ -22614,7 +22626,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#aspire {\n    width: 20%;\n    height: 20%;\n}\n", ""]);
+exports.push([module.i, "\n#aspire {\n    width: 20%;\n    height: 25%;\n    background-color: #e8e8e8;\n}\n", ""]);
 
 // exports
 

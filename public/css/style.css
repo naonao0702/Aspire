@@ -108,11 +108,11 @@ body {
 .my-page > p {
     margin: 0;
 }
-.lesson-list-container {
-    padding-top: 50px;
-    padding-left: 15px;
-    padding-right: 15px;
-}
+/*.lesson-list-container {*/
+/*    padding-top: 50px;*/
+/*    padding-left: 15px;*/
+/*    padding-right: 15px;*/
+/*}*/
 
 
 .language-item {
@@ -120,18 +120,7 @@ body {
     box-shadow: 0 2px 10px rgba(0,0,0,0.04);
     /*width: 95%;*/
 }
-.image-item {
-    border-radius : 3px 0 0 3px; 
-    background-color: #fff;
-    position: relative;
-}
-.image-item > img {
-    width: 50%;
-    height: 50%;
-    position: absolute;
-    top: 25%;
-    left: 25%;
-}
+
 .item {
     background-color: skyblue;
     /*text-align: center;*/
@@ -264,5 +253,58 @@ table{
       color: #ffffff;
   }
 
+/*レッスン一覧ページ*/
+
+.languages {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    /*display: inline-block;*/
+}
+
+.lessons {
+    width: 15%;
+    height: 200px;
+    padding: 0;
+    margin-left: 8%;
+    background-color: #fff;
+    display: inline-block;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+}
+.image-item {
+    /*border-radius : 3px 0 0 3px; */
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: relative;
+}
+.image-item > img {
+    width: 40%;
+    height: 40%;
+    position: absolute;
+    top: 20%;
+    left: 30%;
+}
+.image-item > .btn4{
+    position: absolute;
+    top: 70%;
+    left: 30%;
+    /*width: 50%;*/
+    /*height: 50%;*/
+}
+.btn4{
+    display: inline-block;
+    padding: 0.3em 1em;
+    text-decoration: none;
+    color: #67c5ff;
+    border: solid 2px #67c5ff;
+    border-radius: 3px;
+    transition: .4s;
+}
+.btn4:hover{
+    background: #67c5ff;
+    color: white;
+}
 
  
