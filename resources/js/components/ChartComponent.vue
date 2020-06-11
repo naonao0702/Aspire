@@ -1,4 +1,3 @@
-
 <script>
 // ここでチャートの種類を選択して...
 // import { Doughnut, mixins } from 'vue-chartjs';
@@ -15,7 +14,7 @@ import { Doughnut } from 'vue-chartjs';
  * Scatter   : 散布図（mixinでは未対応とのこと）
  **/
 export default {
-  // mixins: [Doughnut, mixins.reactiveData],
+  // mixins: [Doughnut, mixins.reactiveProp],
   extends: Doughnut,
   data() {
     return {
@@ -30,20 +29,33 @@ export default {
           default: () => {
           return [];
         }
+      },
+      url: {
+        type: String,
+        require  : true,
+          default: () => {
+          return [];
+        }
       }
   },
   methods: {
       changeColor: function() {
-        console.log(this.proportion);
-        if(this.proportion == 100 ){
-          this.color1 = '#99CC66';
-        }else if(this.proportion >= 80){
-          this.color1 = '#FFCC33';
-        }else if(this.proportion >= 50){
-          this.color1 = '#CD5C5C';
-        }else{
+        console.log(this.url);
+        if(this.url == 1){
           this.color1 = '#6699CC';
+        }else{
+          this.color1 = '#99CC66';
         }
+        // console.log(this.proportion);
+        // if(this.proportion == 100 ){
+        //   this.color1 = '#99CC66';
+        // }else if(this.proportion >= 80){
+        //   this.color1 = '#FFCC33';
+        // }else if(this.proportion >= 50){
+        //   this.color1 = '#CD5C5C';
+        // }else{
+        //   this.color1 = '#6699CC';
+        // }
       }
   },
   mounted () {
@@ -59,14 +71,15 @@ export default {
         borderColor: [this.color1, this.color2],
         data: [data1, data2],
       }]
-    })
+    });
   }
-}
+};
 </script>
 
 <style>
     #aspire {
       width: 20%;
-      height: 20%;
+      height: 25%;
+      background-color: #e8e8e8;
   }
 </style>

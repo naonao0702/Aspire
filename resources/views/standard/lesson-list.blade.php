@@ -4,33 +4,27 @@
 <!--<div class="lesson-list-header">-->
 
 <!--</div>-->
+<!--<div>-->
+<!--    <progress id="myProgress" value="50" max="100">0%</progress>-->
+<!--  </div>-->
 
-<div class="lesson-list-container row">
-    <div class="col-md-8">
-        @foreach($language_datas as $data)
-        <div class="language-item">
-            <div class="item">
-                <div class="row">
-                    <div class="col-md-2 image-item">
-                        <?php $logo = mb_strtolower($data->language); ?>
-                        <!--<img src="{{ asset('images/java.svg') }}" alt="ロゴ画像">-->
-                        <img src="{{ asset("images/$logo.svg") }}" alt="ロゴ画像">
-                    </div>
-                    <div class="col-md-10">
-                        <a href="/lesson-detail/{{$data->language_id}}" style="text-decoration:none;">
-                            <h3> {{ $data->language }}</h3>
-                            <p> {{ $data->language_detail }}</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
+
+<div>
+    <div>
+        <div class="lessons-language">
+            <ul class="languages">
+                @foreach($language_datas as $data)
+                    <?php $logo = mb_strtolower($data->language); ?>
+                    <li class="lessons">
+                        <div class="image-item">
+                            <img src="{{ asset("images/$logo.svg") }}" alt="ロゴ画像">
+                            <a href="/lesson-detail/{{$data->language_id}}" class="btn4">{{ $data->language }}</a>
+                        </div>
+                    </li>
+                 @endforeach
+            </ul>
         </div>
-        @endforeach
     </div>
-    <div class="col-md-4 sidemenu">
-
-    </div>
-
 </div>
 
 

@@ -7,7 +7,7 @@
 
 <div class="table-posision">
     <div id="aspire">
-        <chart-component proportion="{{ $proportion }}"></chart-component>
+        <chart-component proportion="{{ $proportion }}" url="{{ $datas[0]->language_id }}"></chart-component>
         <!--<chart-component></chart-component>-->
         <!--<example-component test="{{ $proportion }}"></example-component>-->
     </div>
