@@ -23,6 +23,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 Vue.component('chart-component', require('./components/ChartComponent.vue').default);
 
+Vue.component('sidebar-component', require('./components/SidebarComponent.vue').default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -32,3 +34,10 @@ Vue.component('chart-component', require('./components/ChartComponent.vue').defa
 const app = new Vue({
     el: '#aspire',
 });
+
+// const app2 = new Vue({
+//     el: '#bar',
+//     components: {
+        
+//     }
+// });
