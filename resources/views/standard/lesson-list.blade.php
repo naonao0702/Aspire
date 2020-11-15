@@ -1,40 +1,19 @@
 @extends('layout.app')
 
 @section('contents')
-<!--<div class="lesson-list-header">-->
-
-<!--</div>-->
-
-<div class="lesson-list-container row">
-    <div class="col-md-8">
-        @foreach($language_datas as $data)
-        <div class="language-item">
-            <div class="item">
-                <div class="row">
-                    <div class="col-md-2 image-item">
-                        <?php $logo = mb_strtolower($data->language);?>
-                        <!--<img src="{{ asset('images/java.svg') }}" alt="ロゴ画像">-->
-                        <img src="{{ asset("images/$logo.svg") }}" alt="ロゴ画像">
-                    </div>
-                    <div class="col-md-10">
-                        <a href="/lesson-detail/{{$data->language_id}}" style="text-decoration:none;">
-                            <h3> {{ $data->language }}</h3>
-                            <p> {{ $data->language }} について</p>
-                            <p> {{ $data->language }} について</p>
-                            <p> {{ $data->language }} について</p>
-                        </a>
-                    </div>
-                </div>
+<div class="items">
+    @foreach($language_datas as $data)
+        <div class="itemBox">
+            
+            <p class="languageName">{{ $data->language }}</p>
+            <div class="boxInner">
             </div>
+            <a href="/lesson-detail/{{$data->language_id}}" class="btn">受講する</a>
+            <!--<input type="submit" class="btn" value="受講する" href="#" />-->
+            <!--<button>受講する</button>-->
         </div>
-        @endforeach
-    </div>
-    <div class="col-md-4 sidemenu">
-        
-    </div>
-
+    @endforeach
 </div>
-
 
 
 @endsection
